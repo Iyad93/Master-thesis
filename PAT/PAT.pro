@@ -17,11 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp ioFunctions.cpp stringFunctions.cpp \   
     MyTimer.cpp \
-    MyDaqSession.cpp
+    errorFunctions.cpp \
+
 HEADERS += ioFunctions.h stringFunctions.h  NIDAQmx.h \
     MyTimer.h \
     MyDAQSession.h \
-    mydaqsession.h
+    mydaqsession.h \
+    errorFunctions.h
 
 INCLUDEPATH += "C:\\Program Files (x86)\\National Instruments\\Shared\\ExternalCompilerSupport\\C\\include\\"
 LIBS += -L"C:\\Program Files (x86)\\National Instruments\\Shared\\ExternalCompilerSupport\\C\\lib32\\msvc\\"

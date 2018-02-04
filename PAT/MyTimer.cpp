@@ -1,4 +1,5 @@
 #include <MyTimer.h>
+#include <errorFunctions.h>
 
 //Constructors implementation--------------
 MyTimer::MyTimer()
@@ -24,7 +25,8 @@ void MyTimer::start()
 {
     if(isRunning())
     {
-        throw "Timer is already running";
+        error_message = "Timer is already running";
+        raiseError(error_message, 0);
     }
     else
     {
@@ -45,7 +47,8 @@ double MyTimer::stop()
     }
     else
     {
-        throw "Timer has already been stopped";
+        error_message = "Timer has already been stopped";
+        raiseError(error_message, 0);
     }
 }
 //Pause the timer until resume() is called
@@ -58,11 +61,13 @@ void MyTimer::pause()
     }
     else if(!isRunning())
     {
-        throw "Cannot pause, timer has been stopped";
+        error_message = "Cannot pause, timer has been stopped";
+        raiseError(error_message, 1);
     }
     else
     {
-        throw "Cannot pause, timer has already been paused";
+        error_message = "Cannot pause, timer has already been paused";
+        raiseError(error_message, 1);
     }
 }
 
@@ -76,11 +81,13 @@ void MyTimer::resume()
     }
     else if(!isPaused())
     {
-        throw "Cannot resume, timer has not been paused";
+        error_message = "Cannot resume, timer has not been paused";
+        raiseError(error_message, 0);
     }
     else
     {
-        throw "Cannot resume, timer has been permanently stopped";
+        error_message = "Cannot resume, timer has been permanently stopped";
+        raiseError(error_message, 1);
     }
 }
 //Check if the timer is running
@@ -111,7 +118,8 @@ double MyTimer::get()
     }
     else
     {
-        throw "Cannot take the time, timer has been stopped";
+        error_message = "Cannot take the time, timer has been stopped";
+        raiseError(error_message, 0);
     }
 }
 //Function that returns the start time of the timer
@@ -139,7 +147,8 @@ void MyTimer::wait(double t)
     }
     else
     {
-        throw "Cannot perform \"wait task\", timer has been stopped";
+        error_message = "Cannot perform \"wait\" task, timer has been stopped";
+        raiseError(error_message, 1);
     }
 }
 //Function that uses get() to freeze the program and the timer for a precise amount of time
@@ -167,7 +176,8 @@ void MyTimer::freeze(double t)
     }
     else
     {
-        throw "Cannot perform \"wait task\", timer has been stopped";
+        error_message = "Cannot perform \"freeze\" task, timer has been stopped";
+        raiseError(error_message, 1);
     }
 }
 

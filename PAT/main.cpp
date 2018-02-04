@@ -13,8 +13,7 @@ internal noise of the sensor and to "normal" background illumination
 //Define an error flag function, whenever something goes wrtong with the data acquisiton
 
 int main(void)
-{
-
+{ 
    return 0;
 }
 

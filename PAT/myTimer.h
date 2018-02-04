@@ -16,6 +16,7 @@ private:
     double start_time;
     double last_pause_time;
     double pause_period;
+    std::string error_message;
 //Define constructor and functions-----------
 public:
     //Constructor
