@@ -15,15 +15,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-SOURCES += main.cpp ioFunctions.cpp stringFunctions.cpp \   
+SOURCES += main.cpp \   
     MyTimer.cpp \
-    errorFunctions.cpp \
+    MyDAQSession.cpp \
+    errorfunctions.cpp \
+    iofunctions.cpp \
+    stringfunctions.cpp
 
-HEADERS += ioFunctions.h stringFunctions.h  NIDAQmx.h \
+HEADERS +=  NIDAQmx.h \
     MyTimer.h \
     MyDAQSession.h \
-    mydaqsession.h \
-    errorFunctions.h
+    myDAQSsession.h \
+    errorfunctions.h \
+    iofunctions.h \
+    stringfunctions.h
 
 INCLUDEPATH += "C:\\Program Files (x86)\\National Instruments\\Shared\\ExternalCompilerSupport\\C\\include\\"
 LIBS += -L"C:\\Program Files (x86)\\National Instruments\\Shared\\ExternalCompilerSupport\\C\\lib32\\msvc\\"
