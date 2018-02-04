@@ -1,0 +1,8 @@
+#ifndef IOFUNCCTIONS_H
+#define IOFUNCCTIONS_H
+
+#endif // IOFUNCCTIONS_H
+
+int countLines();
+void fWrite();
+double* fRead();
